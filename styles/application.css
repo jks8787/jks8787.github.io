@@ -1,0 +1,103 @@
+.site-heading {
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 1px 1px 0px #1EB1DE;
+}
+
+.site-heading.sub {
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 0.5px 0.5px 0px #320533;
+}
+
+body {
+  margin-top: 50px;
+  background: #FBFAFB;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  color: #203D46;
+}
+
+.hero-spacer {
+  margin-top: 50px;
+}
+
+.hero-feature {
+  margin-bottom: 30px;
+}
+
+.view-code-and-project {
+  font-style: italic;
+}
+
+footer {
+  margin: 50px 0;
+}
+
+.navbar.navbar-fixed-top.navbar-inverse {
+border-bottom: 10px solid #91DFE9;
+background-color: #2198BC;
+}
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+color: #ffffff;
+background-color: transparent;
+}
+
+.navbar-inverse .navbar-brand {
+color: #E0C4EA;
+font-weight: normal;
+text-shadow: 1px 1px 0 #320533;
+}
+
+.navbar-inverse .navbar-brand {
+color: #C3E6EB;
+font-weight: normal;
+text-shadow: 1px 1px 0 #1EB1DE;
+}
+
+a.btn.btn-custom {
+color: #203D46;
+text-decoration: none;
+}
+
+.text-muted {
+color: #2198BC;
+}
+
+#email-address{
+  color: #2198BC;
+}
+
+#footer-info {
+  color: #203D46;
+  text-decoration: none;
+}
+
+#footer {
+  width: 100%;
+  margin-top: 40px;
+}
+
+#footer ul li {
+  display: inline-block;
+  padding-left: 20px;
+  color: #203D46;
+}
+
+.education-list li {
+  display: block;
+  list-style-type: square;
+  list-style-position:inside;
+}
+
+.skills-list li {
+  display: block;
+  list-style-type: square;
+  list-style-position:inside;
+}
+
+#education {
+  margin-bottom: 40px;
+}
+
