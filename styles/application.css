@@ -7,7 +7,7 @@
 .site-heading.sub {
   text-align: center;
   font-weight: bold;
-  text-shadow: 0.5px 0.5px 0px #320533;
+  text-shadow: 0.5px 0.5px 0px #FBFAFB;
 }
 
 body {
@@ -18,8 +18,13 @@ body {
   color: #203D46;
 }
 
+ul {
+  list-style: none;
+}
+
 .hero-spacer {
   margin-top: 50px;
+  text-align: center;
 }
 
 .hero-feature {
@@ -85,14 +90,15 @@ color: #2198BC;
   color: #203D46;
 }
 
-.education-list li {
+.education.list li {
   display: block;
   list-style-type: square;
   list-style-position:inside;
 }
 
-.skills-list li {
+.skills.list li {
   display: block;
+  font-size: 17px;
   list-style-type: square;
   list-style-position:inside;
 }
@@ -100,4 +106,3 @@ color: #2198BC;
 #education {
   margin-bottom: 40px;
 }
-
