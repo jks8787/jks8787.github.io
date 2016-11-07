@@ -1,21 +1,19 @@
 .site-heading {
   text-align: center;
   font-weight: bold;
-  text-shadow: 1px 1px 0px #1EB1DE;
 }
 
 .site-heading.sub {
   text-align: center;
   font-weight: bold;
-  text-shadow: 0.5px 0.5px 0px #FBFAFB;
 }
 
 body {
   margin-top: 50px;
-  background: #FBFAFB;
+  background: whitesmoke;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
-  color: #203D46;
+  color: #586F7C;
 }
 
 ul {
@@ -40,42 +38,40 @@ footer {
 }
 
 .navbar.navbar-fixed-top.navbar-inverse {
-border-bottom: 10px solid #91DFE9;
-background-color: #2198BC;
+  border-bottom: 10px solid #808F87;
+  background-color: #073B3A;
 }
 
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
-color: #ffffff;
-background-color: transparent;
+  color: whitesmoke;
+  background-color: transparent;
 }
 
 .navbar-inverse .navbar-brand {
-color: #E0C4EA;
-font-weight: normal;
-text-shadow: 1px 1px 0 #320533;
+  color: #C1CFDA;
+  font-weight: normal;
 }
 
 .navbar-inverse .navbar-brand {
-color: #C3E6EB;
-font-weight: normal;
-text-shadow: 1px 1px 0 #1EB1DE;
+  color: #C3E6EB;
+  font-weight: normal;
 }
 
 a.btn.btn-custom {
-color: #203D46;
-text-decoration: none;
+  color: #586F7C;
+  text-decoration: none;
 }
 
 .text-muted {
-color: #2198BC;
+  color: #586F7C;
 }
 
-#email-address{
-  color: #2198BC;
+#email-address {
+  color: #073B3A;
 }
 
 #footer-info {
-  color: #203D46;
+  color: #586F7C;
   text-decoration: none;
 }
 
@@ -87,7 +83,7 @@ color: #2198BC;
 #footer ul li {
   display: inline-block;
   padding-left: 20px;
-  color: #203D46;
+  color: #586F7C;
 }
 
 .education.list li {
@@ -105,4 +101,8 @@ color: #2198BC;
 
 #education {
   margin-bottom: 40px;
+}
+
+.project-header {
+  text-align: center;
 }
