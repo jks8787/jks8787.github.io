@@ -1,0 +1,202 @@
+@charset "utf-8";
+@import "normalize";
+
+body {
+  background: #fbfeff;
+  padding: 2rem;
+  font-family: "europa", Arial, sans-serif;
+  font-size: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin: 0 0.4rem;
+}
+
+nav img {
+  width: 25px;
+}
+
+.logo img {
+  height: 18.75em;
+  margin-top: 6em;
+}
+
+body > header {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+body > header nav {
+  margin-left: auto;
+}
+
+.brand h1 {
+  color: #00A1CB;
+  font-family: "lobster",serif;
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 1px 2px 0px #113F8C;
+  cursor: url('../images/duchrabbit.gif'), default;
+}
+
+.welcome {
+  width: 646px;
+  height: 102px;
+}
+
+.title {
+  display: flex;
+}
+
+.brand h1 {
+  display: flex;
+  position: absolute;
+  top: 85px;
+  left: 55px;
+}
+
+.brand h1 > div {
+  padding-bottom: 10px;
+}
+
+.brand h1 > div:nth-child(2) {
+  margin: 0 0 0 8px;
+  overflow: hidden;
+  width: 0;
+  transition: width 1s;
+}
+
+.brand h1 > div:nth-child(2) div  {
+  white-space: nowrap;
+}
+
+.brand h1:hover div:nth-child(2) {
+  width: 320px;
+  transition: width 1s;
+}
+
+.brand h1 div:nth-child(3) {
+  width: 120px;
+  position: relative;
+}
+
+.brand h1 div:nth-child(3) strong {
+  font-family: "europa",Arial, sans-serif;
+  color: black;
+  text-shadow: none;
+  font-size: 0.68rem;
+  display: block;
+  text-align: right;
+  position: absolute;
+  width: 319px;
+  right: 9px;
+  bottom: 2px;
+}
+
+.circle-crop {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid #113F8C;
+}
+
+.circle-crop img {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
+
+header {
+  padding-bottom: 25px;
+}
+
+.diz-mai-name {
+  background-color: #00A1CB;
+  color: rgb(233, 251, 255);
+  padding: 4px 8px;
+  cursor: url('../images/duchrabbit.gif'), default;
+}
+
+.diz-mai-name span {
+  position:relative;
+  top: 0;
+  transition: top 0.25s;
+}
+
+.diz-mai-name:hover span {
+  top: -2px;
+  text-decoration: underline;
+  transition: top 0.25s;
+}
+
+.strikethrough {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+section h1 {
+  color: #616161;
+}
+
+section h2 {
+  font-size: 1.2em;
+}
+
+.creds h2 {
+  margin-bottom: 0;
+}
+
+.creds h3 {
+  margin-top: 0;
+  font-size: 1em;
+  font-weight: 100;
+}
+
+.creds p {
+  border-left: 10px solid #00A1CB;
+  padding-left: 12px;
+}
+
+.creds hr{
+  border: 1px solid #113F8C;
+  opacity: 0.2;
+}
+
+footer {
+  margin: 2rem 0 1rem;
+  text-align: right;
+}
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
