@@ -43,6 +43,7 @@ configure :build do
   # activate :minify_javascript
 end
 
+# https://www.sitepoint.com/free-static-sites-middleman-github/
 activate :deploy do |deploy|
   deploy.deploy_method = :git
   deploy.branch = 'master'
