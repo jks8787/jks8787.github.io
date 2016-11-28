@@ -380,7 +380,7 @@ nav li {
   margin: 0 0.4rem; }
 
 nav img {
-  width: 25px; }
+  width: 2.5rem; }
 
 .logo img {
   height: 18.75em;
@@ -400,12 +400,12 @@ body > header nav {
   font-family: "lobster",serif;
   font-size: 3rem;
   margin: 0;
-  text-shadow: 1px 2px 0px #113F8C;
+  text-shadow: 0.1rem 0.2rem 0rem #113F8C;
   cursor: url("../images/duchrabbit.gif"), default; }
 
 .welcome {
-  width: 646px;
-  height: 102px; }
+  width: 64.6rem;
+  height: 10.2rem; }
 
 .title {
   display: flex; }
@@ -413,14 +413,14 @@ body > header nav {
 .brand h1 {
   display: flex;
   position: absolute;
-  top: 85px;
-  left: 55px; }
+  top: 8.5rem;
+  left: 5.5rem; }
 
 .brand h1 > div {
-  padding-bottom: 10px; }
+  padding-bottom: 1rem; }
 
 .brand h1 > div:nth-child(2) {
-  margin: 0 0 0 8px;
+  margin: 0 0 0 0.8rem;
   overflow: hidden;
   width: 0;
   transition: width 1s; }
@@ -429,11 +429,11 @@ body > header nav {
   white-space: nowrap; }
 
 .brand h1:hover div:nth-child(2) {
-  width: 320px;
+  width: 20.5rem;
   transition: width 1s; }
 
 .brand h1 div:nth-child(3) {
-  width: 120px;
+  width: 12rem;
   position: relative; }
 
 .brand h1 div:nth-child(3) strong {
@@ -444,17 +444,17 @@ body > header nav {
   display: block;
   text-align: right;
   position: absolute;
-  width: 319px;
-  right: 9px;
-  bottom: 2px; }
+  width: 31.9rem;
+  right: 0.9rem;
+  bottom: 0.2rem; }
 
 .circle-crop {
-  width: 100px;
-  height: 100px;
+  width: 10rem;
+  height: 10rem;
   position: relative;
   overflow: hidden;
   border-radius: 50%;
-  border: 1px solid #113F8C; }
+  border: 0.1rem solid #113F8C; }
 
 .circle-crop img {
   display: inline;
@@ -463,12 +463,12 @@ body > header nav {
   width: auto; }
 
 header {
-  padding-bottom: 25px; }
+  padding-bottom: 2.5rem; }
 
 .diz-mai-name {
   background-color: #00A1CB;
   color: #e9fbff;
-  padding: 4px 8px;
+  padding: 0.4rem 0.8rem;
   cursor: url("../images/duchrabbit.gif"), default; }
 
 .diz-mai-name span {
@@ -477,7 +477,7 @@ header {
   transition: top 0.25s; }
 
 .diz-mai-name:hover span {
-  top: -2px;
+  top: -0.2rem;
   text-decoration: underline;
   transition: top 0.25s; }
 
@@ -500,11 +500,11 @@ section h2 {
   font-weight: 100; }
 
 .creds p {
-  border-left: 10px solid #00A1CB;
-  padding-left: 12px; }
+  border-left: 1rem solid #00A1CB;
+  padding-left: 1.2rem; }
 
 .creds hr {
-  border: 1px solid #113F8C;
+  border: 0.1rem solid #113F8C;
   opacity: 0.2; }
 
 .project-link {
@@ -513,6 +513,13 @@ section h2 {
 
 .project-link:hover {
   color: #616161; }
+
+.show-case-image-wrap {
+  display: flex;
+  padding-bottom: 2rem; }
+
+.show-case-image {
+  flex: 1 0 50%; }
 
 footer {
   margin: 2rem 0 1rem;
@@ -545,3 +552,31 @@ footer {
     opacity: 0; }
   100% {
     opacity: 1; } }
+.project--box {
+  margin: 1rem 0; }
+
+.project--box h3 {
+  font-weight: bold; }
+
+.project--box .project--box--content {
+  display: flex;
+  background: #E4E4E6;
+  padding: 1rem; }
+
+.project--box--content > div {
+  flex: 1;
+  max-height: 325px;
+  overflow: hidden; }
+
+.project--box--content > div:nth-child(2) {
+  flex: 0.25; }
+
+.project--links {
+  float: right; }
+
+.project--links a {
+  font-size: 1rem;
+  font-weight: normal; }
+
+.project--links a:hover {
+  text-decoration: underline; }
