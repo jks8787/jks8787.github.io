@@ -1,5 +1,4 @@
 body {
-  background-color: #F8F8F8;
   padding: 2rem;
   font-family: "europa", Arial, sans-serif;
   font-size: 1rem;
@@ -38,11 +37,11 @@ body > header nav {
 
 .brand h1 {
   color: #00A1CB;
-  font-family: "lobster",serif;
-  font-size: 3rem;
+  /*font-family: "lobster",serif;*/
+  font-size: 2.75rem;
   margin: 0;
   text-shadow: 0.1rem 0.2rem 0rem #3273DC;
-  cursor: url('../images/duchrabbit.gif'), default;
+  /*cursor: url('../images/duchrabbit.gif'), default;*/
 }
 
 .welcome {
