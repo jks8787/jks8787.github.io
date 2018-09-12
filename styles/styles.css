@@ -1,14 +1,15 @@
 body {
-  padding: 2rem;
   font-family: "europa", Arial, sans-serif;
   font-size: 1rem;
+  padding: 2rem;
 }
 
 nav ul {
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
 }
 
 nav li {
@@ -25,10 +26,10 @@ nav img {
 }
 
 body > header {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
   align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 body > header nav {
@@ -36,12 +37,12 @@ body > header nav {
 }
 
 .brand h1 {
-  color: #00A1CB;
+  /*cursor: url('../images/duchrabbit.gif'), default;*/
   /*font-family: "lobster",serif;*/
+  color: #00A1CB;
   font-size: 2.7rem;
   margin: 0;
   text-shadow: 0.1rem 0.2rem 0rem #3273DC;
-  /*cursor: url('../images/duchrabbit.gif'), default;*/
 }
 
 .welcome {
@@ -55,9 +56,9 @@ body > header nav {
 
 .brand h1 {
   display: flex;
+  left: 5.5rem;
   position: absolute;
   top: 8.5rem;
-  left: 5.5rem;
 }
 
 .brand h1 > div {
@@ -67,8 +68,8 @@ body > header nav {
 .brand h1 > div:nth-child(2) {
   margin: 0 0 0 0.8rem;
   overflow: hidden;
-  width: 0;
   transition: width 1s;
+  width: 0;
 }
 
 .brand h1 > div:nth-child(2) div  {
@@ -76,41 +77,41 @@ body > header nav {
 }
 
 .brand h1:hover div:nth-child(2) {
-  width: 20.5rem;
   transition: width 1s;
+  width: 20.5rem;
 }
 
 .brand h1 div:nth-child(3) {
-  width: 12rem;
   position: relative;
+  width: 12rem;
 }
 
 .brand h1 div:nth-child(3) strong {
-  font-family: "europa",Arial, sans-serif;
-  color: black;
-  text-shadow: none;
-  font-size: 0.68rem;
-  display: block;
-  text-align: right;
-  position: absolute;
-  width: 31.9rem;
-  right: 0.9rem;
   bottom: 0.2rem;
+  color: black;
+  display: block;
+  font-family: "europa", Arial, sans-serif;
+  font-size: 0.68rem;
+  position: absolute;
+  right: 0.9rem;
+  text-align: right;
+  text-shadow: none;
+  width: 31.9rem;
 }
 
 .circle-crop {
-  width: 10rem;
-  height: 10rem;
-  position: relative;
-  overflow: hidden;
   border-radius: 50%;
   border: 0.1rem solid #3273DC;
+  height: 10rem;
+  overflow: hidden;
+  position: relative;
+  width: 10rem;
 }
 
 .circle-crop img {
   display: inline;
-  margin: 0 auto;
   height: 100%;
+  margin: 0 auto;
   width: auto;
 }
 
@@ -119,10 +120,10 @@ header {
 }
 
 .diz-mai-name {
+  /* cursor: url('../images/duchrabbit.gif'), default; */
   background-color: #00A1CB;
   color: rgb(233, 251, 255);
   padding: 0.4rem 0.8rem;
-  cursor: url('../images/duchrabbit.gif'), default;
 }
 
 .diz-mai-name span {
@@ -132,8 +133,8 @@ header {
 }
 
 .diz-mai-name:hover span {
-  top: -0.2rem;
   text-decoration: underline;
+  top: -0.2rem;
   transition: top 0.25s;
 }
 
@@ -155,9 +156,9 @@ section h2 {
 }
 
 .creds h3 {
-  margin-top: 0;
   font-size: 1em;
   font-weight: 100;
+  margin-top: 0;
 }
 
 .creds p {
@@ -181,7 +182,7 @@ section h2 {
 
 .show-case-image-wrap {
   display: flex;
-  padding-bottom: 2rem
+  padding-bottom: 2rem;
 }
 
 .show-case-image {
@@ -194,10 +195,10 @@ footer {
 }
 
 .typed-cursor{
-    opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
     -moz-animation: blink 0.7s infinite;
+    -webkit-animation: blink 0.7s infinite;
     animation: blink 0.7s infinite;
+    opacity: 1;
 }
 @keyframes blink{
     0% { opacity:1; }
@@ -224,8 +225,8 @@ footer {
 }
 
 .project--box .project--box--content {
-  display: flex;
   background: #E4E4E6;
+  display: flex;
   padding: 1rem;
 }
 
@@ -240,14 +241,14 @@ footer {
 }
 
 .project--box .project--box--content {
-  box-shadow: 10px 5px 5px #3273DC;
   border: 10px solid #00A1CB;
+  box-shadow: 10px 5px 5px #3273DC;
   margin-top: 10px;
 }
 
 .project--box .project--box--image {
-  box-shadow: 10px 5px 5px #3273DC;
   border: 10px solid #00A1CB;
+  box-shadow: 10px 5px 5px #3273DC;
   margin-top: 10px;
 }
 
