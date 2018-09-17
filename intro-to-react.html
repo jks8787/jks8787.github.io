@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Introduction</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+        class: center, middle
+
+        # intro to react.js
+
+        ---
+
+        # fyi
+
+        Girl Develop It is here programs to
+        learn software through mentorship and hands-on instruction.
+
+        remember!
+
+        * Every question is important
+        * Help each other
+        * Have fun
+
+        ---
+
+        # intros to us
+
+        * Who are you?
+        * What do you hope to get out of the class?
+
+        ---
+
+        # knowledge:
+
+        * javascript
+        * es6
+        * HTML/CSS
+
+        # resources:
+
+        * a codepen account
+        * a text editor
+        * google chrome with react developer tools
+
+        ---
+
+        # agenda
+
+        * day 1 - Hello World! Components, Props, State, JSX, ES6
+        * day 2 - ES6, Inline Styles, form basics
+        * day 3 - Best practices, more on forms
+        * day 4 - Overview of Redux React
+
+        ---
+
+        # resources
+
+        * [react docs](https://reactjs.org/docs/hello-world.html)
+        * [react tutorial](https://reactjs.org/tutorial/tutorial.html)
+        * [codecademy course](https://www.codecademy.com/learn/react-101)
+
+        ---
+
+        # what is react?
+
+        * The v in mvc
+        * developed by facebook and open-sourced
+
+        ---
+
+        # when to use react?
+
+        * for dynamic sites
+        * if you want to use vanilla JS and ES6, rather than learn a new DSL (domain specific language)
+
+        ---
+
+        # getting started with jsx
+
+          * what is jsx
+            * JSX allows us to describe our User Interfaces (UIs) in a syntax very similar to the HTML
+            * it is optional
+            * JSX provides syntactic sugar for the React.createElement(component, props, ...children) function
+            * you can catch more template errors at compile time, rather than on page load
+            * Making smaller, reusable components is also easier
+            * [jsx](https://jsx.github.io/)
+
+          * why is jsx
+            * key - React asks for a key attribute that points to a unique ID for each list element
+              * To optimize list display performance
+            * Synthetic events - Some event handlers (onSubmit, onClick) have different names or implementations in different browsers.
+              * The HTML created by your code will be browser specific-  simplifying cross browser compatibility.
+
+        ---
+
+        # behind the sceans
+
+        ## Transpiling
+          * babel to transpile it to the supported JavaScript that the browser will understand.
+          * babel can convert the code from ES6 to ES5, this is because not all the browsers can interpret our ES6
+
+        ## Virtual DOM
+          * the virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI
+            is kept in memory and synced with the “real” DOM by a library such as ReactDOM.
+          * updating the DOM requires browser manipulation, which is slow
+            * updating the virtual DOM does not change the browser (making it faster)
+
+        ---
+        # behind the sceans
+
+        ## javascript class
+
+        * a class is a new Javascript feature, added in ES6 (ECMA2015).
+        * behaves similarly to classes in object-oriented languages.
+        * a class can have a constructor function, which is run on initialization.
+        * a class can extend another class with the "extends" keyword.
+          * If it does so, it's constructor needs to use the word super().
+
+        ---
+
+        # components
+
+        * components are the building blocks of react
+
+        * A function component is the simplest form of a React component
+          * It is a simple function with a simple contract
+          ```javascript
+              const Button = (props) => {
+                    return (
+                      <button>a simple button</button>
+                    );
+              }
+          ```
+
+        * A class component is a more featured way to define a React component
+          * It also acts like a function that receives props, but that function also considers a private internal state
+          ```javascript
+              class Button extends React.Component {
+                  state = { counter: 1 };
+                  render() {
+                    return (
+                      <button>{this.state.counter}</button>
+                    );
+                  }
+                }
+          ```
+          * [read more](https://reactjs.org/docs/components-and-props.html#functional-and-class-components)
+        ---
+
+         # code
+
+         * [open the codepen](https://codepen.io/jks8787/pen/YOvZQQ)
+         * we have function component and a class component
+         ```javascript
+             const Hello = () => (
+               <h2>Hello World</h2>
+             );
+         ```
+         ```javascript
+             class App extends React.Component {
+               render() {
+                 return (<h1>Greetings Earth</h1>);
+               }
+             }
+         ```
+         * we update the DOM, using a diff of the virtual DOM.
+          * First argument is new HTML, second is the element to insert it in.
+          ```javascript
+            ReactDOM.render(<App />, document.getElementById('root'));
+          ```
+        ---
+
+        # more info on components
+
+          * props
+            * props are attributes passed down from one component to another
+            * a component's props can be accessed through this.props in the render function
+            * functions can be passed down as props as well.
+            * [open the codepen](https://codepen.io/jks8787/pen/ZMjoNz)
+
+          * setState
+            * setState() enqueues changes to the component state
+            * this is the primary method you use to update the user interface in response to event handlers and server responses.
+            * [open the codepen](https://codepen.io/jks8787/pen/yxqEPY)
+
+          * state
+            * state is set at the parent component, and then can passed down to children as props.
+            * a component's initial state is set in the constructor function.
+            * [open the codepen](https://codepen.io/jks8787/pen/aajGgZ)
+
+        ---
+
+        # es6 - Object.assign
+          * Object.assign is new to Javascript with ES6.
+          * It takes the first object (usually empty) and then updates it with attributes from any following objects, in order
+          * This is a great way to create new objects based on existing ones concisely
+          * [read more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+
+        # es6 - arrow functions
+          * Arrow functions are a new, improved syntax for functions
+          * One benefit of using arrow functions is that they do not define their own `this`, so you don't need to use `var that=this` with them anymore
+          * [read more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+
+        [open the codepen](https://codepen.io/jks8787/pen/yxqEPY)
+
+        ---
+
+        # suggested reading/coding
+
+          * [embracing es6 part1](https://cantina.co/embracing-es6-part1/)
+          * [ES5 vs ES6 ( With example code )](https://codeburst.io/es5-vs-es6-with-example-code-9901fa0136fc)
+          * [use ecmascript 6 today](https://code.tutsplus.com/articles/use-ecmascript-6-today--net-31582)
+          * [react tutorial](https://reactjs.org/tutorial/tutorial.html)
+
+        ---
+
+        # agenda
+
+          * day 1 - Hello World! Components, Props, State, JSX, ES6
+          * day 2 - ES6, Inline Styles, form basics
+          * day 3 - Best practices,  more on forms
+          * day 4 - overview of Redux React
+
+        ---
+
+        # review
+
+          * jsx --> javascript that looks like HTML, and gets compiled to javascript that renders HTML
+
+          * props --> attributes passed down from one component to another; a component's props can be accessed through this.props in the render function
+
+          * state --> Data stored in parent component, passed down to child components through props; Initialized in the constructor function; Updated with this.setState
+            * this.state and this.props are immutable
+
+          * react tutorial [solution](https://codepen.io/gaearon/pen/gWWZgR)
+
+        ---
+
+        # lifecycle hooks
+
+          * [Docs](https://reactjs.org/docs/state-and-lifecycle.html)
+
+          * componentWillMount:
+            * function called before component is rendered. This is the most commonly used lifecycle hook (AJAX calls, timers)
+
+          * componentDidMount:
+            * function called after component is rendered. Useful for third party integrations if really needed (jQuery plugins)
+
+          * componentWillUnmount:
+            * function called before component is removed from the DOM
+
+          * componentDidUnmount*:
+            * function called after removal from DOM. Useful for cleanup (removing timers, etc.)
+
+          [open the codepen](https://codepen.io/gaearon/pen/vXdGmd)
+
+        ---
+          # review of functional and class components
+
+          * functional components - For child components where you only need the render function
+          ```javascript
+              const Button = (props) => {
+                    return (
+                      <button>a simple button</button>
+                    );
+              }
+          ```
+          * A class component is a more featured way to define a React component
+            * It also acts like a function that receives props, but that function also considers a private internal state
+            ```javascript
+                class Button extends React.Component {
+                    state = { counter: 1 };
+                    render() {
+                      return (
+                        <button>{this.state.counter}</button>
+                      );
+                    }
+                  }
+            ```
+        ---
+
+        # composition vs inheritance
+
+          * composition is always preferred over inheritance in React - make components as reusable as possible!
+
+          * [docs](https://reactjs.org/docs/composition-vs-inheritance.html#so-what-about-inheritance)
+
+        ---
+
+        # controlled components
+
+        * [docs](https://reactjs.org/docs/forms.html)
+        ```
+          In HTML, form elements such as <input>, <textarea>, and <select>
+          typically maintain their own state and update it based on user input.
+
+          In React, mutable state is typically kept in the state property of components,
+          and only updated with setState().
+        ```
+
+        * [open the codepen](https://codepen.io/gaearon/pen/VmmPgp?editors=0010)
+        ---
+
+        # uncontrolled components
+
+          * [docs](https://reactjs.org/docs/uncontrolled-components.html)
+
+          * use refs to store internal form state, and use setState on submit
+
+          * use defaultValue to set initial values in form elements (input, select, etc.)
+
+          * usually not recommended if you can use controlled components (or Redux)
+
+          * [open the codepen](https://codepen.io/gaearon/pen/WooRWa?editors=0010)
+
+        ---
+
+        # suggested reading/coding
+
+          * [thinking in react](https://reactjs.org/docs/thinking-in-react.html)
+
+          * [simple react todo list](https://medium.com/@aghh1504/1-simple-react-todo-list-52186b62976b)
+
+        ---
+
+        # agenda
+
+          * day 1 - Hello World! Components, Props, State, JSX, ES6
+
+          * day 2 - ES6, Inline Styles, form basics
+
+          * day 3 - Best practices, more on forms
+
+          * day 4 - Overview of Redux React
+
+        ---
+
+        # review
+
+        * props, state, setState
+          * [props codepen](https://codepen.io/jks8787/pen/ZMjoNz)
+          * [state codepen](https://codepen.io/jks8787/pen/aajGgZ)
+
+        * classes + components vs. functional components
+          * [functional component and class component code pen](https://codepen.io/jks8787/pen/YOvZQQ)
+
+        ---
+
+        # review
+
+        * lifecycle hooks
+          * componentWillMount, componentDidMount, componentWillUnmount, componentDidUnmount
+          * [open code pen](https://codepen.io/gaearon/pen/vXdGmd)
+
+        * composition vs inheritance
+          * [docs](https://reactjs.org/docs/composition-vs-inheritance.html#so-what-about-inheritance)
+
+        ---
+        # review
+
+        * forms (Controlled and uncontrolled components)
+          * [docs](https://reactjs.org/docs/forms.html)
+          * [controlled component codepen](https://codepen.io/gaearon/pen/VmmPgp?editors=0010)
+          * [uncontrolled component codepen](https://codepen.io/gaearon/pen/WooRWa?editors=0010)
+
+          ```javascript
+                class NameForm extends React.Component {
+                constructor(props) {
+                  super(props);
+                  this.state = {value: ''};
+                  this.handleChange = this.handleChange.bind(this);
+                  this.handleSubmit = this.handleSubmit.bind(this);
+                }
+                handleChange(event) { this.setState({value: event.target.value}); }
+                handleSubmit(event) { alert('A name was submitted: ' + this.state.value); }
+
+                render() {
+                  return (
+                    <form onSubmit={this.handleSubmit}>
+                      <label>
+                        Name:
+                        <input type="text" value={this.state.value} onChange={this.handleChange} />
+                      </label>
+                      <input type="submit" value="Submit" />
+                    </form>
+                  );
+                }
+              }
+          ```
+        ---
+        # create a todo app ( in code pen )
+
+        * [initial todo app](https://codepen.io/jks8787/pen/OooXzy?editors=0110)
+        * [todo app with more components](https://codepen.io/jks8787/pen/gddMob?editors=0110)
+
+        ```javascript
+        function Checkbox(props) {...}
+
+        function InputText(props) {...}
+
+        function NewTodo(props) {...}
+
+        function TodoContainer(props) {...}
+
+        function TodoList(props) {...}
+
+        class TodoApp extends React.Component {
+          ...
+          render() {
+            return (
+              <div>
+                <TodoList todos={this.state.todos} updateDone={this.updateDone.bind(this)} />
+                <NewTodo
+                  onChange={this.updateNewTodoTitle.bind(this)}
+                  onBlurOrSubmit={this.addNewTodo.bind(this)}
+                  newTodoTitle={this.state.newTodoTitle}
+                />
+              </div>
+            );
+          }
+        }
+
+        ReactDOM.render(<TodoApp />, document.getElementById('root'));
+        ```
+        ---
+        # create an app with create react app
+
+        * `Create React apps with no build configuration.` (yay!)
+
+        ```bash
+          npm install -g create-react-app
+          create-react-app my-app
+          cd my-app
+          npm install
+          npm start
+        ```
+
+
+        ---
+        # setting up your app
+
+        * you can now move your code from codepen into the new app
+
+        * you will have to use import and export statements to keep you app from being in one file
+
+        * you can add tests
+
+        ---
+
+        # suggested reading/coding
+
+          * Start working on your own React project :)
+            * a personal site
+            * a blog
+            * a game
+
+          * advanced resources
+            * [getting started with redux](https://egghead.io/courses/getting-started-with-redux)
+            * [manage-application state with mobx state tree](https://egghead.io/courses/manage-application-state-with-mobx-state-tree)
+
+        ---
+
+        # agenda
+
+          * day 1 - Hello World! Components, Props, State, JSX, ES6
+
+          * day 2 - ES6, Inline Styles, form basics
+
+          * day 3 - Best practices, more on forms
+
+          * day 4 - Overview of Redux React
+
+        ---
+        # review
+
+        * todo app in code pen
+          * [initial todo app](https://codepen.io/jks8787/pen/OooXzy?editors=0110)
+          * [todo app with more components](https://codepen.io/jks8787/pen/gddMob?editors=0110)
+        ```javascript
+        function Checkbox(props) {...}
+
+        function InputText(props) {...}
+
+        function NewTodo(props) {...}
+
+        function TodoContainer(props) {...}
+
+        function TodoList(props) {...}
+
+        class TodoApp extends React.Component {
+          ...
+          render() {
+            return (
+              <div>
+                <TodoList todos={this.state.todos} updateDone={this.updateDone.bind(this)} />
+                <NewTodo onChange={this.updateNewTodoTitle.bind(this)}
+                  onBlurOrSubmit={this.addNewTodo.bind(this)}
+                  newTodoTitle={this.state.newTodoTitle}
+                />
+              </div>
+            );
+          }
+        }
+
+        ReactDOM.render(<TodoApp />, document.getElementById('root'));
+        ```
+
+        ---
+        # review
+
+        * todo app in with create react app
+
+        * `Create React apps with no build configuration.` (yay!)
+
+        ```bash
+          npm install -g create-react-app
+          create-react-app my-app
+          cd my-app
+          npm install
+          npm start
+        ```
+
+        ---
+
+        # redux overview
+
+        * [docs about redux's motivations](https://redux.js.org/introduction/motivation)
+
+        ```bash
+         Managing this ever-changing state is hard.
+
+         When a system is opaque and non-deterministic,
+         it is hard to reproduce bugs or add new features.
+        ```
+
+        ---
+
+        # redux overview
+
+        * [docs about redux's three principles](https://redux.js.org/introduction/threeprinciples)
+
+        ```javascript
+        Single source of truth
+          * The state of your whole application is stored
+          in an object tree within a single store.
+
+        State is read-only
+          * The only way to change the state is to emit an action,
+          an object describing what happened.
+
+        Changes are made with pure functions
+          * To specify how the state tree is transformed by actions,
+          you write pure reducers.
+        ```
+
+        ---
+        # redux in practice
+
+        * [Adding Redux to a React App](https://code.likeagirl.io/tutorial-for-adding-redux-to-a-react-app-1a94cc1738e5)
+
+        ```javascript
+            import * as types from './actionTypes';
+
+            export function receiveStuff(json) {
+              return {type: types.RECEIVE_STUFF, stuff: json.stuff};
+            }
+
+            export function fetchStuff() {
+              const url = 'www.url.com';
+              return dispatch => {
+                return fetch(url, {
+                  method: 'GET',
+                  mode: 'cors',
+                  credentials: 'include',
+                  headers: {
+                    'x-api-key': apiKey,
+                    'Accept': 'application/json'
+                  }
+                })
+                .then(response => response.json())
+                .then(json => dispatch(receiveStuff(json)));
+              };
+            }
+        ```
+        ---
+        # Thanks!
+        ---
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
