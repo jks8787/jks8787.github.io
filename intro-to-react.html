@@ -251,25 +251,79 @@
 
         ---
 
-        # lifecycle hooks
+          # (legacy) lifecycle hooks
 
-          * [Docs](https://reactjs.org/docs/state-and-lifecycle.html)
+          * [open the codepen](https://codepen.io/gaearon/pen/vXdGmd)
 
           * componentWillMount:
-            * function called before component is rendered. This is the most commonly used lifecycle hook (AJAX calls, timers)
+            * function called before component is rendered.
+            * this is the most commonly used lifecycle hook (AJAX calls, timers)
 
           * componentDidMount:
-            * function called after component is rendered. Useful for third party integrations if really needed (jQuery plugins)
+            * function called after component is rendered.
+            * useful for third party integrations if really needed (plugins)
 
           * componentWillUnmount:
             * function called before component is removed from the DOM
 
-          * componentDidUnmount*:
-            * function called after removal from DOM. Useful for cleanup (removing timers, etc.)
-
-          [open the codepen](https://codepen.io/gaearon/pen/vXdGmd)
+          * componentDidUnmount:
+            * function called after removal from DOM.
+            *  Useful for cleanup (removing timers, etc.)
 
         ---
+
+          # (current) [lifecycle hooks](https://twitter.com/dan_abramov/status/981712092611989509?lang=en)
+
+          * constructor(props):
+            * the first method called during mount is the constructor
+            * this should be used to initialize the local state, or any other variables, and bind methods.
+
+          * getDerivedStateFromProps(props, state):
+            * created to "replace" componentWillReceiveProps
+            * updates the state before rendering
+            * is a static method it doesn’t have access to the component instanc
+              * to update the state just return a plain object, or null
+              *  serves the same purpose as setState(), but it runs earlier in the lifecycle
+
+        ---
+          # (current) [lifecycle hooks](https://twitter.com/dan_abramov/status/981712092611989509?lang=en)
+
+          * render():
+            * is the only required method in a React Component
+            * called for the first time during mount
+            * used to render DOM nodes
+
+          * componentDidMount():
+            * last method called during the mounting phase
+            * can fetching asynchronous data, handling subscriptions or binding event handlers
+            * can also callsetState()
+
+        ---
+          # (current) [lifecycle hooks](https://twitter.com/dan_abramov/status/981712092611989509?lang=en)
+
+          * shouldComponentUpdate(nextProps, nextState):
+            * method used to intercept the update lifecycle
+            * compare your current props and state to the next ones
+              * then based on the comparsion decide to rerender or not.
+
+          * getSnapshotBeforeUpdate(prevProps, prevState):
+            * this runs after the render
+            * reads the most recent DOM changes, before they are applied
+        ---
+          # (current) [lifecycle hooks](https://twitter.com/dan_abramov/status/981712092611989509?lang=en)
+
+          * componentDidUpdate(prevProps, prevState, snapshot):
+            * similar to componentDidMount, but runs every time an update occurs
+            * changes to the DOM are already committed
+            * can change the state using setState()
+              * should wrap it in a condition
+              * changes to the state triggers a new update
+
+          * componentWillUnmount():
+            * called when the component is about to be destroyed
+              * to clear timeouts, stop network requests
+        ---
+
           # review of functional and class components
 
           * functional components - For child components where you only need the render function
