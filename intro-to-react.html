@@ -220,37 +220,6 @@
 
         ---
 
-        # suggested reading/coding
-
-          * [embracing es6 part1](https://cantina.co/embracing-es6-part1/)
-          * [ES5 vs ES6 ( With example code )](https://codeburst.io/es5-vs-es6-with-example-code-9901fa0136fc)
-          * [use ecmascript 6 today](https://code.tutsplus.com/articles/use-ecmascript-6-today--net-31582)
-          * [react tutorial](https://reactjs.org/tutorial/tutorial.html)
-
-        ---
-
-        # agenda
-
-          * day 1 - Hello World! Components, Props, State, JSX, ES6
-          * day 2 - ES6, Inline Styles, form basics
-          * day 3 - Best practices,  more on forms
-          * day 4 - overview of Redux React
-
-        ---
-
-        # review
-
-          * jsx --> javascript that looks like HTML, and gets compiled to javascript that renders HTML
-
-          * props --> attributes passed down from one component to another; a component's props can be accessed through this.props in the render function
-
-          * state --> Data stored in parent component, passed down to child components through props; Initialized in the constructor function; Updated with this.setState
-            * this.state and this.props are immutable
-
-          * react tutorial [solution](https://codepen.io/gaearon/pen/gWWZgR)
-
-        ---
-
           # (legacy) lifecycle hooks
 
           * [open the codepen](https://codepen.io/gaearon/pen/vXdGmd)
@@ -286,6 +255,7 @@
               *  serves the same purpose as setState(), but it runs earlier in the lifecycle
 
         ---
+
           # (current) [lifecycle hooks](https://twitter.com/dan_abramov/status/981712092611989509?lang=en)
 
           * render():
@@ -299,6 +269,7 @@
             * can also callsetState()
 
         ---
+
           # (current) [lifecycle hooks](https://twitter.com/dan_abramov/status/981712092611989509?lang=en)
 
           * shouldComponentUpdate(nextProps, nextState):
@@ -309,7 +280,9 @@
           * getSnapshotBeforeUpdate(prevProps, prevState):
             * this runs after the render
             * reads the most recent DOM changes, before they are applied
+
         ---
+
           # (current) [lifecycle hooks](https://twitter.com/dan_abramov/status/981712092611989509?lang=en)
 
           * componentDidUpdate(prevProps, prevState, snapshot):
@@ -322,30 +295,7 @@
           * componentWillUnmount():
             * called when the component is about to be destroyed
               * to clear timeouts, stop network requests
-        ---
 
-          # review of functional and class components
-
-          * functional components - For child components where you only need the render function
-          ```javascript
-              const Button = (props) => {
-                    return (
-                      <button>a simple button</button>
-                    );
-              }
-          ```
-          * A class component is a more featured way to define a React component
-            * It also acts like a function that receives props, but that function also considers a private internal state
-            ```javascript
-                class Button extends React.Component {
-                    state = { counter: 1 };
-                    render() {
-                      return (
-                        <button>{this.state.counter}</button>
-                      );
-                    }
-                  }
-            ```
         ---
 
         # composition vs inheritance
@@ -390,6 +340,14 @@
 
           * [simple react todo list](https://medium.com/@aghh1504/1-simple-react-todo-list-52186b62976b)
 
+          * [embracing es6 part1](https://cantina.co/embracing-es6-part1/)
+
+          * [ES5 vs ES6 ( With example code )](https://codeburst.io/es5-vs-es6-with-example-code-9901fa0136fc)
+
+          * [use ecmascript 6 today](https://code.tutsplus.com/articles/use-ecmascript-6-today--net-31582)
+
+          * [react tutorial](https://reactjs.org/tutorial/tutorial.html)
+
         ---
 
         # agenda
@@ -406,57 +364,85 @@
 
         # review
 
-        * props, state, setState
-          * [props codepen](https://codepen.io/jks8787/pen/ZMjoNz)
-          * [state codepen](https://codepen.io/jks8787/pen/aajGgZ)
+          * jsx --> javascript that looks like HTML, and gets compiled to javascript that renders HTML
 
-        * classes + components vs. functional components
-          * [functional component and class component code pen](https://codepen.io/jks8787/pen/YOvZQQ)
+          * props --> attributes passed down from one component to another; a component's props can be accessed through this.props in the render function
+
+          * state --> Data stored in parent component, passed down to child components through props; Initialized in the constructor function; Updated with this.setState
+            * this.state and this.props are immutable
+
+          * react tutorial [solution](https://codepen.io/gaearon/pen/gWWZgR)
+
+        ---
+
+          # review
+
+          * functional components - For child components where you only need the render function
+          ```javascript
+              const Button = (props) => {
+                    return (
+                      <button>a simple button</button>
+                    );
+              }
+          ```
+          * A class component is a more featured way to define a React component
+            * It also acts like a function that receives props, but that function also considers a private internal state
+            ```javascript
+                class Button extends React.Component {
+                    state = { counter: 1 };
+                    render() {
+                      return (
+                        <button>{this.state.counter}</button>
+                      );
+                    }
+                  }
+            ```
 
         ---
 
         # review
 
         * lifecycle hooks
-          * componentWillMount, componentDidMount, componentWillUnmount, componentDidUnmount
-          * [open code pen](https://codepen.io/gaearon/pen/vXdGmd)
+          * [docs](https://reactjs.org/docs/react-component.html#mounting)
 
         * composition vs inheritance
           * [docs](https://reactjs.org/docs/composition-vs-inheritance.html#so-what-about-inheritance)
 
         ---
+
         # review
 
-        * forms (Controlled and uncontrolled components)
+        * forms!
           * [docs](https://reactjs.org/docs/forms.html)
-          * [controlled component codepen](https://codepen.io/gaearon/pen/VmmPgp?editors=0010)
-          * [uncontrolled component codepen](https://codepen.io/gaearon/pen/WooRWa?editors=0010)
-
+          * [controlled component codepen](https://codepen.io/gaearon/pen/VmmPgp?editors=0010) && [uncontrolled component codepen](https://codepen.io/gaearon/pen/WooRWa?editors=0010)
           ```javascript
                 class NameForm extends React.Component {
-                constructor(props) {
-                  super(props);
-                  this.state = {value: ''};
-                  this.handleChange = this.handleChange.bind(this);
-                  this.handleSubmit = this.handleSubmit.bind(this);
-                }
-                handleChange(event) { this.setState({value: event.target.value}); }
-                handleSubmit(event) { alert('A name was submitted: ' + this.state.value); }
-
-                render() {
-                  return (
-                    <form onSubmit={this.handleSubmit}>
-                      <label>
-                        Name:
-                        <input type="text" value={this.state.value} onChange={this.handleChange} />
-                      </label>
-                      <input type="submit" value="Submit" />
-                    </form>
-                  );
-                }
+                    constructor(props) {
+                      super(props);
+                      this.state = {value: ''};
+                      this.handleChange = this.handleChange.bind(this);
+                      this.handleSubmit = this.handleSubmit.bind(this);
+                    }
+                    handleChange(event) { ... }
+                    handleSubmit(event) { ... }
+                    render() {
+                      return (
+                        <form onSubmit={this.handleSubmit}>
+                          <label>
+                            Name:
+                            <input type="text"
+                              value={this.state.value}
+                              onChange={this.handleChange} />
+                          </label>
+                          <input type="submit" value="Submit" />
+                        </form>
+                      );
+                    }
               }
           ```
+
         ---
+
         # create a todo app ( in code pen )
 
         * [initial todo app](https://codepen.io/jks8787/pen/OooXzy?editors=0110)
@@ -464,13 +450,9 @@
 
         ```javascript
         function Checkbox(props) {...}
-
         function InputText(props) {...}
-
         function NewTodo(props) {...}
-
         function TodoContainer(props) {...}
-
         function TodoList(props) {...}
 
         class TodoApp extends React.Component {
@@ -545,15 +527,12 @@
         * todo app in code pen
           * [initial todo app](https://codepen.io/jks8787/pen/OooXzy?editors=0110)
           * [todo app with more components](https://codepen.io/jks8787/pen/gddMob?editors=0110)
+
         ```javascript
         function Checkbox(props) {...}
-
         function InputText(props) {...}
-
         function NewTodo(props) {...}
-
         function TodoContainer(props) {...}
-
         function TodoList(props) {...}
 
         class TodoApp extends React.Component {
