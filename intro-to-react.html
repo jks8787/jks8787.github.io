@@ -647,32 +647,46 @@
         ---
         # redux in practice
 
-        * [Adding Redux to a React App](https://code.likeagirl.io/tutorial-for-adding-redux-to-a-react-app-1a94cc1738e5)
+        * Adding Redux to a React App
+          * install packages
 
-        ```javascript
-            import * as types from './actionTypes';
-
-            export function receiveStuff(json) {
-              return {type: types.RECEIVE_STUFF, stuff: json.stuff};
-            }
-
-            export function fetchStuff() {
-              const url = 'www.url.com';
-              return dispatch => {
-                return fetch(url, {
-                  method: 'GET',
-                  mode: 'cors',
-                  credentials: 'include',
-                  headers: {
-                    'x-api-key': apiKey,
-                    'Accept': 'application/json'
-                  }
-                })
-                .then(response => response.json())
-                .then(json => dispatch(receiveStuff(json)));
-              };
-            }
+        ```bash
+          npm install --save redux react-redux redux-thunk
         ```
+        ---
+        * Adding Redux to a React App
+
+          * setting up files and folders
+
+            * [docs about code structure](https://redux.js.org/docs/faq/CodeStructure.html#code-structure)
+
+            ```bash
+                Just to get us started we will get the ball rolling with a little bit of setup.
+                First you will want three directories, ./actions , ./reducers , ./store
+                all in the src directory of the app.
+            ```
+
+          * Essentially actions describe something happening, and the reducer responds to the action.
+
+            * [docs about reducers](http://redux.js.org/docs/basics/Reducers.html#reducers)
+
+            * [docs about actions](https://redux.js.org/basics/reducers#actions)
+
+            * [docs about the store](https://redux.js.org/basics/store)
+        ---
+
+        * Knitting it together
+
+          * actions up, data down
+
+            * we call an action from our component
+
+            * that action returns its value
+
+            * based on the type a case is triggered in the reducer
+
+            * a new state is returned
+
         ---
         # Thanks!
         ---
